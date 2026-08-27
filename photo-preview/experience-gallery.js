@@ -177,11 +177,48 @@ function initializeExperienceGallery() {
             '" aria-pressed="' + String(index === 0) + '">' + filter[1] + "</button>";
         }).join("") +
       "</div>" +
+      '<div class="experience-carousel-nav" aria-label="Recorrer experiencias">' +
+        '<span class="experience-counter" aria-live="polite">01 / 06</span>' +
+        '<button type="button" data-carousel="previous" aria-label="Experiencia anterior">←</button>' +
+        '<button type="button" data-carousel="next" aria-label="Experiencia siguiente">→</button>' +
+      "</div>" +
     "</div>" +
     '<div class="experience-grid">' + EXPERIENCE_ITEMS.map(experienceCard).join("") + "</div>";
 
   const filterButtons = projectGrid.querySelectorAll("[data-filter]");
   const cards = projectGrid.querySelectorAll(".experience-card");
+  const carousel = projectGrid.querySelector(".experience-grid");
+  const previousButton = projectGrid.querySelector('[data-carousel="previous"]');
+  const nextButton = projectGrid.querySelector('[data-carousel="next"]');
+  const counter = projectGrid.querySelector(".experience-counter");
+  let activeExperience = 0;
+
+  function visibleCards() {
+    return Array.from(cards).filter(function (card) {
+      return !card.hidden;
+    });
+  }
+
+  function updateCarouselControls() {
+    const available = visibleCards();
+    activeExperience = Math.max(0, Math.min(activeExperience, available.length - 1));
+    counter.textContent = String(activeExperience + 1).padStart(2, "0") + " / " +
+      String(available.length).padStart(2, "0");
+    previousButton.disabled = activeExperience === 0;
+    nextButton.disabled = activeExperience >= available.length - 1;
+  }
+
+  function goToExperience(index, smooth) {
+    const available = visibleCards();
+    if (!available.length) return;
+    activeExperience = Math.max(0, Math.min(index, available.length - 1));
+    const card = available[activeExperience];
+    const cardLeft = card.getBoundingClientRect().left -
+      carousel.getBoundingClientRect().left + carousel.scrollLeft;
+    carousel.scrollTo({ left: cardLeft, behavior: smooth ? "smooth" : "auto" });
+    updateCarouselControls();
+  }
+
   filterButtons.forEach(function (button) {
     button.addEventListener("click", function () {
       const selected = button.dataset.filter;
@@ -191,8 +228,40 @@ function initializeExperienceGallery() {
       cards.forEach(function (card) {
         card.hidden = selected !== "all" && card.dataset.category !== selected;
       });
+      goToExperience(0, false);
     });
   });
+
+  previousButton.addEventListener("click", function () {
+    goToExperience(activeExperience - 1, true);
+  });
+
+  nextButton.addEventListener("click", function () {
+    goToExperience(activeExperience + 1, true);
+  });
+
+  let scrollFrame;
+  carousel.addEventListener("scroll", function () {
+    window.cancelAnimationFrame(scrollFrame);
+    scrollFrame = window.requestAnimationFrame(function () {
+      const available = visibleCards();
+      if (!available.length) return;
+      const carouselLeft = carousel.getBoundingClientRect().left;
+      let closest = 0;
+      let closestDistance = Infinity;
+      available.forEach(function (card, index) {
+        const distance = Math.abs(card.getBoundingClientRect().left - carouselLeft);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closest = index;
+        }
+      });
+      activeExperience = closest;
+      updateCarouselControls();
+    });
+  }, { passive: true });
+
+  goToExperience(0, false);
 
   const dialog = createExperienceDialog();
   projectGrid.querySelectorAll("[data-experience]").forEach(function (button) {
