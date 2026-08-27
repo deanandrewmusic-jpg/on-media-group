@@ -67,6 +67,18 @@ function enhanceCurrentSite() {
 
   document.body.classList.add("photo-preview-active");
 
+  const heroVisual = document.querySelector(".stage-card");
+  if (heroVisual) {
+    heroVisual.appendChild(
+      createPhotoStage({
+        key: "hero",
+        eyebrow: "PRODUCCIÓN INTEGRAL",
+        title: "Una experiencia en vivo",
+        guide: "Toma amplia con escenario, pantalla, luces y público",
+      }),
+    );
+  }
+
   PHOTO_SLOTS.forEach((slot) => {
     const target = document.querySelector(slot.selector);
     if (target) target.appendChild(createPhotoStage(slot));
