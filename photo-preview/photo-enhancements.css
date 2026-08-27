@@ -1,0 +1,139 @@
+/* Mantiene el diseño actual y usa sus espacios visuales para fotografía real. */
+.photo-preview-active .project-art,
+.photo-preview-active .about-visual {
+  isolation: isolate;
+}
+
+.photo-preview-active .project-art > :not(.photo-stage):not(.project-stamp),
+.photo-preview-active .about-visual > :not(.photo-stage) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.photo-stage {
+  --photo: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(22px, 3vw, 34px);
+  color: #fff;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(24, 94, 255, 0.32), transparent 32%),
+    linear-gradient(135deg, #0b1d3a 0%, #102e62 48%, #07111f 100%);
+}
+
+.photo-stage.has-photo {
+  background-image: var(--photo);
+  background-position: center;
+  background-size: cover;
+  transform: translateZ(0);
+}
+
+.photo-stage.has-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(4, 11, 22, 0.04) 25%, rgba(4, 11, 22, 0.88) 100%);
+}
+
+.photo-stage__placeholder {
+  position: absolute;
+  inset: 18px;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 9px;
+  padding: 24px;
+  border: 1px dashed rgba(70, 218, 255, 0.52);
+  border-radius: 16px;
+  text-align: center;
+  color: rgba(235, 247, 255, 0.92);
+  background:
+    linear-gradient(rgba(65, 213, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(65, 213, 255, 0.035) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.photo-stage.has-photo .photo-stage__placeholder {
+  display: none;
+}
+
+.photo-stage__placeholder svg {
+  width: 34px;
+  fill: none;
+  stroke: #36d6ff;
+  stroke-width: 1.5;
+}
+
+.photo-stage__placeholder strong,
+.photo-stage__placeholder small {
+  max-width: 260px;
+}
+
+.photo-stage__placeholder strong {
+  font-size: 12px;
+  letter-spacing: 0.17em;
+}
+
+.photo-stage__placeholder small {
+  color: rgba(218, 232, 248, 0.66);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.photo-stage__shade {
+  position: absolute;
+  inset: 44% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(2, 8, 17, 0.9));
+  pointer-events: none;
+}
+
+.photo-stage__caption {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 6px;
+}
+
+.photo-stage__caption span {
+  color: #42d9ff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+}
+
+.photo-stage__caption strong {
+  font-size: clamp(20px, 2.2vw, 30px);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.photo-preview-active .project-stamp {
+  z-index: 3;
+}
+
+.photo-preview-active .about-visual .photo-stage {
+  border-radius: inherit;
+}
+
+.photo-preview-active .about-visual .photo-stage__caption strong {
+  max-width: 360px;
+  font-size: clamp(24px, 3vw, 38px);
+}
+
+@media (max-width: 760px) {
+  .photo-stage {
+    padding: 22px;
+  }
+
+  .photo-stage__placeholder {
+    inset: 14px;
+  }
+
+  .photo-stage__caption strong {
+    font-size: 22px;
+  }
+}
