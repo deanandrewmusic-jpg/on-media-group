@@ -4,7 +4,8 @@
   isolation: isolate;
 }
 
-.photo-preview-active .stage-card > :not(.photo-stage),\n.photo-preview-active .project-art > :not(.photo-stage):not(.project-stamp),
+.photo-preview-active .stage-card > :not(.photo-stage),
+.photo-preview-active .project-art > :not(.photo-stage):not(.project-stamp),
 .photo-preview-active .about-visual > :not(.photo-stage) {
   opacity: 0;
   pointer-events: none;
@@ -122,6 +123,7 @@
 .photo-preview-active .stage-card .photo-stage {
   border-radius: inherit;
   padding: clamp(24px, 3vw, 38px);
+  background-position: center;
 }
 
 .photo-preview-active .stage-card .photo-stage__caption strong {

@@ -1,87 +1,136 @@
-const EXPERIENCE_PHOTOS = {
-  conciertos: "",
-  proms: "",
-  corporativos: "",
-  btl: "",
-  sociales: "",
-  especiales: "",
-};
-
 const EXPERIENCE_FILTERS = [
   ["all", "Todas"],
   ["conciertos", "Conciertos"],
-  ["proms", "Proms"],
   ["corporativos", "Corporativos"],
   ["btl", "BTL"],
   ["sociales", "Sociales"],
-  ["especiales", "Montajes especiales"],
+  ["audiovisual", "Audiovisual"],
 ];
 
 const EXPERIENCE_ITEMS = [
   {
-    id: "conciertos",
+    id: "tigres-del-norte",
     category: "conciertos",
-    eyebrow: "CONCIERTOS Y ESPECTÁCULOS",
-    title: "Producción preparada para grandes audiencias.",
-    description: "Escenario, pantallas, iluminación y operación técnica trabajando como una sola experiencia.",
+    eyebrow: "CONCIERTO",
+    title: "Los Tigres del Norte",
+    description: "Una producción de gran formato donde escenario, iluminación, pantallas y operación técnica trabajan como una sola experiencia.",
     scale: "Gran formato",
     services: ["Producción integral", "Sonido", "Iluminación", "Pantallas LED"],
+    photo: "./images/tigres-del-norte.webp",
+    alt: "Escenario del concierto de Los Tigres del Norte",
+    position: "center 44%",
     featured: true,
   },
   {
-    id: "proms",
-    category: "proms",
-    eyebrow: "SENIOR PROMS",
-    title: "Una noche diseñada para sentirse irrepetible.",
-    description: "Ambiente, música, luces y contenido visual organizados para convertir la celebración en un recuerdo completo.",
-    scale: "Escala media",
-    services: ["Producción", "Iluminación", "Sonido", "Audiovisual"],
+    id: "bronco",
+    category: "conciertos",
+    eyebrow: "CONCIERTO",
+    title: "Bronco",
+    description: "Una puesta en escena intensa y reconocible, diseñada para que el espectáculo mantenga fuerza visual desde cualquier punto del público.",
+    scale: "Gran formato",
+    services: ["Producción", "Escenario", "Iluminación", "Pantallas"],
+    photo: "./images/bronco.webp",
+    alt: "Presentación en vivo de Bronco",
+    position: "center 48%",
   },
   {
-    id: "corporativos",
-    category: "corporativos",
-    eyebrow: "EVENTOS CORPORATIVOS",
-    title: "Claridad técnica con presencia de marca.",
-    description: "Conferencias, lanzamientos y encuentros donde cada mensaje debe verse y escucharse con precisión.",
-    scale: "Escala adaptable",
-    services: ["Pantallas LED", "Sonido", "Audiovisual"],
+    id: "los-pericos",
+    category: "conciertos",
+    eyebrow: "CONCIERTO",
+    title: "Los Pericos",
+    description: "Color, contenido visual e iluminación acompañando la energía de una banda en vivo y conectando el escenario con la audiencia.",
+    scale: "Gran formato",
+    services: ["Producción", "Iluminación", "Contenido visual", "Sonido"],
+    photo: "./images/los-pericos.webp",
+    alt: "Los Pericos durante una presentación en vivo",
+    position: "center 46%",
   },
   {
-    id: "btl",
+    id: "aleks-syntek",
+    category: "conciertos",
+    eyebrow: "CONCIERTO",
+    title: "Aleks Syntek",
+    description: "Producción técnica para una presentación en vivo, cuidando la lectura del escenario, el ambiente y cada momento del espectáculo.",
+    scale: "Gran formato",
+    services: ["Producción", "Sonido", "Iluminación", "Operación técnica"],
+    photo: "./images/aleks-syntek.webp",
+    alt: "Aleks Syntek durante una presentación en vivo",
+    position: "center 45%",
+  },
+  {
+    id: "cm-airlines-activacion",
     category: "btl",
-    eyebrow: "BTL Y ACTIVACIONES",
-    title: "Experiencias que invitan a participar.",
-    description: "Montajes que acercan la marca al público mediante tecnología, contenido y momentos memorables.",
+    eyebrow: "ACTIVACIÓN DE MARCA",
+    title: "CM Airlines",
+    description: "Una experiencia de marca construida para presentar, conectar y mantener al público participando dentro del evento.",
     scale: "Formato modular",
-    services: ["Concepto", "Montaje", "Tecnología", "Contenido"],
+    services: ["BTL", "Montaje", "Pantallas", "Contenido"],
+    photo: "./images/cm-airlines-activacion.webp",
+    alt: "Activación de CM Airlines con presentadores y pantalla",
+    position: "center 44%",
   },
   {
-    id: "sociales",
+    id: "cm-airlines-evento",
+    category: "corporativos",
+    eyebrow: "EVENTO CORPORATIVO",
+    title: "CM Airlines",
+    description: "Un encuentro cuidado desde la ambientación hasta la experiencia del público, con una presencia de marca clara y coherente.",
+    scale: "Escala adaptable",
+    services: ["Producción", "Iluminación", "Sonido", "Coordinación"],
+    photo: "./images/cm-airlines-evento.webp",
+    alt: "Asistentes durante un evento corporativo de CM Airlines",
+    position: "center 48%",
+  },
+  {
+    id: "boda",
     category: "sociales",
-    eyebrow: "BODAS Y CELEBRACIONES",
-    title: "Cada detalle acompaña el momento.",
-    description: "Producción y cobertura para conservar la energía, las emociones y los detalles de una celebración.",
-    scale: "Íntimo o amplio",
-    services: ["Iluminación", "Sonido", "Foto y video"],
+    eyebrow: "BODA",
+    title: "Una celebración llena de energía",
+    description: "Iluminación, sonido y ambiente coordinados para acompañar cada momento sin perder la emoción de la pista.",
+    scale: "Celebración social",
+    services: ["Producción", "Iluminación", "Sonido", "Ambientación"],
+    photo: "./images/boda.webp",
+    alt: "Invitados disfrutando la pista durante una boda",
+    position: "center 44%",
+    fit: "contain",
   },
   {
-    id: "especiales",
-    category: "especiales",
-    eyebrow: "FORMATOS ESPECIALES",
-    title: "Tecnología que también forma parte del diseño.",
-    description: "Pantallas cilíndricas, montajes personalizados y soluciones que convierten una idea visual en una experiencia física.",
-    scale: "Formato especial",
-    services: ["Pantallas 360°", "Contenido", "Integración técnica"],
+    id: "evento-social",
+    category: "sociales",
+    eyebrow: "EXPERIENCIA SOCIAL",
+    title: "Momentos pensados para participar",
+    description: "Una dinámica cercana y entretenida que convierte la actividad en un recuerdo compartido por todos los asistentes.",
+    scale: "Formato ágil",
+    services: ["Activación", "Producción", "Logística", "Experiencia"],
+    photo: "./images/evento-social.webp",
+    alt: "Actividad participativa durante un evento social",
+    position: "center",
+    fit: "contain",
+  },
+  {
+    id: "produccion-audiovisual",
+    category: "audiovisual",
+    eyebrow: "PRODUCCIÓN AUDIOVISUAL",
+    title: "Contenido en punto de venta",
+    description: "Producción de contenido en locación para comunicar productos, personas y marcas con una imagen clara y profesional.",
+    scale: "Producción en locación",
+    services: ["Grabación", "Dirección", "Audio", "Contenido"],
+    photo: "./images/produccion-audiovisual.webp",
+    alt: "Grabación audiovisual en un punto de venta de tecnología",
+    position: "center",
   },
 ];
 
 function photoPlaceholder(item, className) {
-  const source = EXPERIENCE_PHOTOS[item.id];
-  const style = source ? ' style="--experience-photo:url(' + source + ')"' : "";
+  const source = item.photo;
+  const position = item.position || "center";
+  const style = source ? ' style="--experience-photo:url(' + source + ');--photo-position:' + position + '"' : "";
   const hasPhoto = source ? " has-photo" : "";
+  const fit = item.fit || "cover";
   return (
     '<div class="' + className + hasPhoto + '"' + style +
-      ' role="img" aria-label="' + (source ? item.eyebrow : "Fotografía real pendiente: " + item.eyebrow) + '">' +
+      ' data-fit="' + fit + '">' +
+      (source ? '<img class="experience-photo__image" src="' + source + '" alt="' + item.alt + '" loading="lazy" decoding="async">' : '') +
       '<div class="experience-photo__placeholder" aria-hidden="true">' +
         '<svg viewBox="0 0 24 24"><path d="M4 5.5h16v13H4zM7 15l3.1-3.2 2.4 2.3 2.1-2 2.4 2.9M16.5 9h.01"/></svg>' +
         '<strong>FOTO REAL</strong>' +
@@ -178,7 +227,7 @@ function initializeExperienceGallery() {
         }).join("") +
       "</div>" +
       '<div class="experience-carousel-nav" aria-label="Recorrer experiencias">' +
-        '<span class="experience-counter" aria-live="polite">01 / 06</span>' +
+        '<span class="experience-counter" aria-live="polite">01 / ' + String(EXPERIENCE_ITEMS.length).padStart(2, "0") + '</span>' +
         '<button type="button" data-carousel="previous" aria-label="Experiencia anterior">←</button>' +
         '<button type="button" data-carousel="next" aria-label="Experiencia siguiente">→</button>' +
       "</div>" +

@@ -107,10 +107,29 @@
 
 .experience-photo.has-photo {
   background-image:
-    linear-gradient(180deg, rgba(3, 10, 20, 0.02), rgba(3, 10, 20, 0.18)),
+    linear-gradient(180deg, rgba(3, 10, 20, 0.08), rgba(3, 10, 20, 0.32)),
     var(--experience-photo);
-  background-position: center;
+  background-position: var(--photo-position, center);
   background-size: cover;
+}
+
+.experience-photo__image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--photo-position, center);
+}
+
+.experience-photo[data-fit="contain"] .experience-photo__image {
+  padding: 12px;
+  object-fit: contain;
+}
+
+.experience-photo[data-fit="contain"] {
+  background-color: #07111f;
 }
 
 .experience-photo__placeholder {

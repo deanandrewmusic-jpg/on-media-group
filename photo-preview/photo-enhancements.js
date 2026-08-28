@@ -3,6 +3,7 @@
  * Para colocar las fotos reales, solo se reemplazan las rutas vacías de PHOTO_SOURCES.
  */
 const PHOTO_SOURCES = {
+  hero: "./images/onmedia-portada.webp",
   prom: "",
   led360: "",
   boda: "",
@@ -72,9 +73,9 @@ function enhanceCurrentSite() {
     heroVisual.appendChild(
       createPhotoStage({
         key: "hero",
-        eyebrow: "PRODUCCIÓN INTEGRAL",
-        title: "Una experiencia en vivo",
-        guide: "Toma amplia con escenario, pantalla, luces y público",
+        eyebrow: "ON MEDIA GROUP",
+        title: "Producción que se vive",
+        guide: "Imagen principal de On Media Group",
       }),
     );
   }
