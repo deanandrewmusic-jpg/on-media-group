@@ -7,7 +7,7 @@ const PHOTO_SOURCES = {
   prom: "",
   led360: "",
   boda: "",
-  backstage: "",
+  backstage: "./images/montaje-escenario.png",
 };
 
 const PHOTO_SLOTS = [

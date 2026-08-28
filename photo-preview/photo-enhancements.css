@@ -135,6 +135,21 @@
   border-radius: inherit;
 }
 
+/* Encuadre de la fotografía real del montaje dentro del panel Nosotros. */
+.photo-preview-active .about-visual .photo-stage[data-photo="backstage"] {
+  background-position: 48% center;
+}
+
+.photo-preview-active .about-visual .photo-stage[data-photo="backstage"]::before {
+  background:
+    linear-gradient(180deg, rgba(4, 11, 22, 0.01) 55%, rgba(4, 11, 22, 0.22) 100%),
+    linear-gradient(90deg, rgba(4, 11, 22, 0.08), transparent 30%);
+}
+
+.photo-preview-active .about-visual .photo-stage[data-photo="backstage"] .photo-stage__caption {
+  display: none;
+}
+
 .photo-preview-active .about-visual .photo-stage__caption strong {
   max-width: 360px;
   font-size: clamp(24px, 3vw, 38px);
