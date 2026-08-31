@@ -165,7 +165,7 @@ function App() {
                 const added = selectedIds.includes(service.id);
                 return <article className={`service-card ${added ? "is-selected" : ""}`} key={service.id}>
                   <button type="button" className="card-image-button" onClick={() => { rememberFocus(); setDetail(service); }} aria-label={`Ver detalles de ${service.title}`}>
-                    <img src={assets(service.photo)} alt={service.alt} width="900" height="480" loading={index < 3 ? "eager" : "lazy"} decoding="async" style={{ objectPosition: service.position }} />
+                    <img src={assets(service.photo)} alt={service.alt} width="64" height="64" loading={index < 3 ? "eager" : "lazy"} decoding="async" style={{ objectPosition: service.position }} />
                     <span className="image-shade" /><span className="card-category">{categories.find((cat) => cat.id === service.category)?.short}</span><span className="image-open" aria-hidden="true"><ArrowUpRight size={18} /></span>
                     {added && <span className="photo-selected"><Check size={13} />Seleccionado</span>}
                   </button>
@@ -174,7 +174,7 @@ function App() {
               })}
             </div> : <div className="empty-search"><Search size={34} /><h3>No encontramos ese servicio</h3><p>Probá con otra palabra o explorá todas las categorías.</p><Button onClick={() => { setQuery(""); setCategory("todos"); }}>Ver todos los servicios</Button><a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer">¿Buscás algo diferente? Consultanos <ArrowUpRight size={15} /></a></div>}
 
-            <div className="catalog-note"><Info size={17} /><p>Los detalles orientan tu consulta. El alcance, la disponibilidad y el precio se confirman en una propuesta personalizada. Las fotos pertenecen al portafolio de On Media y muestran experiencias relacionadas.</p></div>
+            <div className="catalog-note"><Info size={17} /><p>Las fichas resumen cada servicio. El alcance, la disponibilidad y el precio se confirman en una propuesta personalizada.</p></div>
           </div>
         </section>
 
@@ -190,7 +190,7 @@ function App() {
 
       <Dialog open={Boolean(detail)} onOpenChange={(open) => { if (!open) setDetail(null); }}>
         <DialogContent className="catalog-dialog service-dialog" showCloseButton={false} onCloseAutoFocus={restoreFocus}>
-          {detail && <><DialogClose asChild><Button className="modal-close" variant="ghost" aria-label="Cerrar detalles"><X size={21} /></Button></DialogClose><div className="detail-photo"><img src={assets(detail.photo)} alt={detail.alt} style={{ objectPosition: detail.position }} /><span>Fotografía del portafolio de On Media</span></div><div className="detail-content"><DialogHeader><p className="eyebrow">{categories.find((cat) => cat.id === detail.category)?.label}</p><DialogTitle>{detail.title}</DialogTitle><DialogDescription>{detail.detail}</DialogDescription></DialogHeader><h3>Lo que podemos coordinar</h3><ul className="includes-list">{detail.includes.map((item) => <li key={item}><span><Check size={15} /></span>{item}</li>)}</ul><div className="ideal-for"><strong>Ideal para</strong><p>{detail.idealFor}</p></div>{detail.needsReview && <p className="review-warning"><Info size={16} />Este servicio proviene del material comercial anterior y está pendiente de validación. Podés consultar su disponibilidad.</p>}<div className="detail-footer"><small>El equipo confirma alcance, disponibilidad y precio.</small><Button className="detail-add" onClick={() => toggleService(detail)}>{selectedIds.includes(detail.id) ? <Check size={17} /> : <Plus size={17} />}{selectedIds.includes(detail.id) ? "Agregado · Quitar de mi solicitud" : "Agregar a mi solicitud"}</Button></div></div></>}
+          {detail && <><DialogClose asChild><Button className="modal-close" variant="ghost" aria-label="Cerrar detalles"><X size={21} /></Button></DialogClose><div className="detail-photo"><img src={assets(detail.photo)} alt={detail.alt} style={{ objectPosition: detail.position }} /><span>Servicio de On Media</span></div><div className="detail-content"><DialogHeader><p className="eyebrow">{categories.find((cat) => cat.id === detail.category)?.label}</p><DialogTitle>{detail.title}</DialogTitle><DialogDescription>{detail.detail}</DialogDescription></DialogHeader><h3>Lo que podemos coordinar</h3><ul className="includes-list">{detail.includes.map((item) => <li key={item}><span><Check size={15} /></span>{item}</li>)}</ul><div className="ideal-for"><strong>Ideal para</strong><p>{detail.idealFor}</p></div>{detail.needsReview && <p className="review-warning"><Info size={16} />Este servicio proviene del material comercial anterior y está pendiente de validación. Podés consultar su disponibilidad.</p>}<div className="detail-footer"><small>El equipo confirma alcance, disponibilidad y precio.</small><Button className="detail-add" onClick={() => toggleService(detail)}>{selectedIds.includes(detail.id) ? <Check size={17} /> : <Plus size={17} />}{selectedIds.includes(detail.id) ? "Agregado · Quitar de mi solicitud" : "Agregar a mi solicitud"}</Button></div></div></>}
         </DialogContent>
       </Dialog>
 

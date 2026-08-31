@@ -28,7 +28,7 @@ export const services: Service[] = [
   {
     id: "produccion-integral", category: "eventos", title: "Producción integral de eventos",
     description: "Una sola coordinación para convertir tu idea en una experiencia bien ejecutada.",
-    photo: "tigres-del-norte.webp", alt: "Escenario del concierto de Los Tigres del Norte", position: "center 44%",
+    photo: "icon-produccion-integral.svg", alt: "Ícono de Producción integral de eventos",
     includes: ["Planificación del evento", "Coordinación técnica", "Montaje y operación"],
     idealFor: "Eventos corporativos, conciertos, proms y celebraciones.",
     detail: "Coordinamos las áreas que tu evento necesita. Podemos integrar pantallas, sonido, iluminación y producción audiovisual en una misma propuesta, según el lugar, la fecha y el alcance.",
@@ -37,7 +37,7 @@ export const services: Service[] = [
   {
     id: "pantallas-led", category: "eventos", title: "Pantallas LED",
     description: "Contenido que se ve y se siente, desde una presentación hasta un gran escenario.",
-    photo: "bronco.webp", alt: "Pantallas y escenario durante una presentación de Bronco", position: "center 44%",
+    photo: "icon-pantallas-led.svg", alt: "Ícono de Pantallas LED",
     includes: ["Formato según el espacio", "Instalación de pantallas", "Operación durante el evento"],
     idealFor: "Conciertos, congresos, lanzamientos y experiencias de marca.",
     detail: "Definimos el formato de pantalla y el montaje de acuerdo con tu espacio y contenido. Las dimensiones, configuraciones especiales y disponibilidad se confirman al cotizar.",
@@ -46,7 +46,7 @@ export const services: Service[] = [
   {
     id: "sonido", category: "eventos", title: "Sonido profesional",
     description: "Voces claras y música con presencia para que tu mensaje llegue a todos.",
-    photo: "aleks-syntek.webp", alt: "Presentación musical en vivo de Aleks Syntek", position: "center 44%",
+    photo: "icon-sonido.svg", alt: "Ícono de Sonido profesional",
     includes: ["Configuración de audio", "Prueba de sonido", "Operación técnica"],
     idealFor: "Charlas, eventos empresariales, presentaciones y conciertos.",
     detail: "Planteamos el sistema de sonido según el recinto, la audiencia y las necesidades de voces o música. El equipo específico y la cantidad de micrófonos se definen en la propuesta.",
@@ -55,7 +55,7 @@ export const services: Service[] = [
   {
     id: "iluminacion", category: "eventos", title: "Iluminación de eventos",
     description: "Creá el ambiente y destacá los momentos que hacen especial tu evento.",
-    photo: "los-pericos.webp", alt: "Iluminación del escenario durante el concierto de Los Pericos", position: "center 46%",
+    photo: "icon-iluminacion.svg", alt: "Ícono de Iluminación de eventos",
     includes: ["Propuesta de ambiente", "Montaje de iluminación", "Operación durante el evento"],
     idealFor: "Escenarios, bodas, proms, eventos corporativos y lanzamientos.",
     detail: "La iluminación acompaña la identidad y los momentos de tu evento. Combinamos ambientación y necesidades escénicas de acuerdo con el espacio y la propuesta aprobada.",
@@ -64,7 +64,7 @@ export const services: Service[] = [
   {
     id: "activaciones-btl", category: "marca", title: "Activaciones de marca",
     description: "Llevá tu marca al encuentro de las personas con una experiencia participativa.",
-    photo: "cm-airlines-activacion.webp", alt: "Actividad de marca de CM Airlines con presentadores y pantalla", position: "center 43%",
+    photo: "icon-activaciones-btl.svg", alt: "Ícono de Activaciones de marca",
     includes: ["Concepto de la actividad", "Coordinación del montaje", "Dinámicas con el público"],
     idealFor: "Lanzamientos, centros comerciales, ferias y puntos de venta.",
     detail: "Construimos una propuesta que conecte tu marca con el público. Definimos contigo la dinámica, el lugar y los recursos necesarios, desde una acción puntual hasta una activación con varias áreas.",
@@ -73,7 +73,7 @@ export const services: Service[] = [
   {
     id: "degustaciones-promocion", category: "marca", title: "Degustaciones y promoción",
     description: "Acercá tu producto a las personas para que puedan conocerlo y probarlo.",
-    photo: "evento-social.webp", alt: "Personas participando en una actividad del portafolio de On Media",
+    photo: "icon-degustaciones-promocion.svg", alt: "Ícono de Degustaciones y promoción",
     includes: ["Propuesta de dinámica", "Coordinación en el punto", "Logística promocional"],
     idealFor: "Productos nuevos, comercios, ferias y campañas de temporada.",
     detail: "Podés consultar por actividades de degustación, demostración o promoción. El tipo de personal, los materiales, el producto y la cobertura se acuerdan según cada proyecto.",
@@ -82,7 +82,7 @@ export const services: Service[] = [
   {
     id: "personal-promocional", category: "marca", title: "Personal para activaciones",
     description: "Acompañamiento para recibir, orientar y conectar con el público de tu marca.",
-    photo: "cm-airlines-evento.webp", alt: "Asistentes durante un evento de CM Airlines", position: "center 46%",
+    photo: "icon-personal-promocional.svg", alt: "Ícono de Personal para activaciones",
     includes: ["Perfil según la actividad", "Coordinación de participación", "Apoyo a la experiencia"],
     idealFor: "Lanzamientos, activaciones, exhibiciones y eventos comerciales.",
     detail: "Consultá disponibilidad de personal promocional y animación. Los perfiles, las funciones, los horarios y la cantidad de personas se confirman antes de contratar.",
@@ -91,7 +91,7 @@ export const services: Service[] = [
   {
     id: "produccion-audiovisual", category: "contenido", title: "Producción audiovisual",
     description: "Imágenes y sonido que cuentan lo que hace diferente a tu marca.",
-    photo: "produccion-audiovisual.webp", alt: "Grabación de contenido audiovisual en un punto de venta", position: "center 40%",
+    photo: "icon-produccion-audiovisual.svg", alt: "Ícono de Producción audiovisual",
     includes: ["Enfoque de la pieza", "Grabación en locación", "Edición y entrega acordada"],
     idealFor: "Videos de marca, productos, campañas y comunicación empresarial.",
     detail: "Damos forma al mensaje y al contenido audiovisual que necesitás. Definimos el objetivo, la duración, las locaciones y los formatos de entrega antes de producir.",
@@ -100,7 +100,7 @@ export const services: Service[] = [
   {
     id: "cobertura-eventos", category: "contenido", title: "Cobertura de eventos",
     description: "Conservá y compartí los momentos importantes, incluso después del evento.",
-    photo: "boda.webp", alt: "Invitados disfrutando de una celebración de boda", position: "center 44%",
+    photo: "icon-cobertura-eventos.svg", alt: "Ícono de Cobertura de eventos",
     includes: ["Momentos clave a cubrir", "Registro audiovisual", "Resumen en formato acordado"],
     idealFor: "Eventos corporativos, conferencias, conciertos y celebraciones.",
     detail: "Planificamos qué momentos registrar y para qué canales se usará el material. La duración de cobertura, el equipo y las piezas finales se definen en la cotización.",
@@ -109,7 +109,7 @@ export const services: Service[] = [
   {
     id: "contenido-digital", category: "contenido", title: "Contenido digital",
     description: "Transformá tus ideas en piezas claras y listas para comunicar en tus canales.",
-    photo: "produccion-audiovisual.webp", alt: "Producción de contenido para una marca en locación", position: "right center",
+    photo: "icon-contenido-digital.svg", alt: "Ícono de Contenido digital",
     includes: ["Objetivo de comunicación", "Edición o diseño de piezas", "Formatos por canal"],
     idealFor: "Redes sociales, campañas, presentaciones de productos y marcas.",
     detail: "Consultá por edición de video, diseño de publicaciones y piezas digitales. La cantidad de entregables, las revisiones y los plazos dependen del alcance aprobado.",
@@ -118,7 +118,7 @@ export const services: Service[] = [
   {
     id: "branding-montaje", category: "branding", title: "Branding para espacios",
     description: "Hacé reconocible tu marca en el espacio donde sucede la experiencia.",
-    photo: "cm-airlines-activacion.webp", alt: "Identidad de marca en una actividad de CM Airlines", position: "center 50%",
+    photo: "icon-branding-montaje.svg", alt: "Ícono de Branding para espacios",
     includes: ["Adaptación de identidad", "Propuesta de aplicaciones", "Coordinación de instalación"],
     idealFor: "Activaciones, ferias, lanzamientos y espacios de atención al público.",
     detail: "Proponemos aplicaciones de marca para el espacio del evento. Las medidas, los materiales y las condiciones de instalación se revisan para cada proyecto.",
@@ -127,7 +127,7 @@ export const services: Service[] = [
   {
     id: "materiales-promocionales", category: "branding", title: "Materiales promocionales",
     description: "Piezas físicas que acompañan tu campaña y mantienen presente tu marca.",
-    photo: "cm-airlines-evento.webp", alt: "Evento corporativo del portafolio de On Media", position: "center 52%",
+    photo: "icon-materiales-promocionales.svg", alt: "Ícono de Materiales promocionales",
     includes: ["Diseño según la campaña", "Selección de materiales", "Producción según cantidades"],
     idealFor: "Promociones, puntos de venta, ferias y campañas empresariales.",
     detail: "Consultá opciones de impresión y artículos promocionales. Tipos de producto, materiales, cantidades mínimas, disponibilidad y tiempos se confirman con el equipo comercial.",

@@ -16,7 +16,8 @@ El resultado estático se genera en `../catalogo-preview/`, con rutas relativas.
 ## Actualizar contenido
 
 - `src/catalog.ts`: servicios, categorías, alcance orientativo, palabras de búsqueda y número de WhatsApp.
-- `public/images/`: fotografías reales ya suministradas para el sitio, sin recreación por IA.
+- `public/images/icon-*.svg`: íconos locales para las fichas, los detalles y la selección de servicios.
+- `public/images/`: fotografías reales ya suministradas, reservadas para la sección de portafolio.
 - `src/styles.css`: colores, tipografía Geist, diseño y tamaños adaptables.
 - `src/main.tsx`: exploración, selección y formulario de consulta.
 
@@ -27,7 +28,9 @@ El resultado estático se genera en `../catalogo-preview/`, con rutas relativas.
 3. Completar o corregir las prestaciones orientativas de cada ficha; no se publican precios, capacidades de equipos, métricas ni paquetes inventados.
 4. Después de aprobar, actualizar los avisos de vista previa y `needsReview`; ajustar los metadatos Open Graph a la dirección final y decidir si habilitar indexación.
 
-Las fotografías se presentan como referencias del portafolio, sin atribuir un alcance técnico específico a un proyecto a partir de su imagen.
+Las fichas emplean íconos SVG, no fotografías. Las fotografías se conservan como referencias en la sección de portafolio, sin atribuir un alcance técnico específico a un proyecto a partir de su imagen.
+
+El PDF adjunto en la conversación del 31 de agosto no se pudo abrir en esta sesión. Esta revisión visual no añade ni confirma servicios a partir de ese documento; mantiene los avisos de validación comercial.
 
 ## Privacidad y funcionamiento
 

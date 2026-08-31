@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { categories, services, filterServices, readSelection, buildMessage, formatDate, whatsappHref } from "../src/catalog.ts";
+import { cases, categories, services, filterServices, readSelection, buildMessage, formatDate, whatsappHref } from "../src/catalog.ts";
 
 test("the initial catalogue has 12 unique services in four balanced categories", () => {
   assert.equal(services.length, 12);
@@ -71,4 +71,24 @@ test("privacy and preview guardrails remain explicit", () => {
   assert.match(app, /WhatsApp todavía tenés que pulsar Enviar/);
   assert.match(app, /sessionStorage\.setItem\(SELECTION_KEY, JSON.stringify\(selectedIds\)\)/);
   assert.doesNotMatch(app, /localStorage|fetch\(|XMLHttpRequest|dangerouslySetInnerHTML/);
+});
+
+test("service cards use distinct local SVG icons, never portfolio photos", () => {
+  assert.equal(new Set(services.map(s => s.photo)).size, services.length);
+  for (const service of services) {
+    assert.match(service.photo, /^icon-[a-z0-9-]+\.svg$/);
+    assert.match(service.alt, /^Ícono de /);
+    const svg = readFileSync(resolve("public/images", service.photo), "utf8");
+    assert.match(svg, /<svg[^>]+viewBox="0 0 24 24"/);
+    assert.doesNotMatch(svg, /<script|<foreignObject|<image|onload=|onerror=/i);
+    assert.doesNotMatch(svg, /href=|url\(/i);
+  }
+});
+
+test("portfolio photography remains separate from service icons", () => {
+  assert.equal(cases.length, 3);
+  for (const project of cases) {
+    assert.match(project.photo, /\.webp$/);
+    assert.ok(existsSync(resolve("public/images", project.photo)), project.photo);
+  }
 });
