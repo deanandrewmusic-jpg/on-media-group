@@ -1,16 +1,19 @@
-# On Media Group — herramientas digitales
+# On Media Group — sitio web y herramientas comerciales
 
-Repositorio de vistas previas y herramientas comerciales para On Media Group.
+Repositorio del sitio web corporativo de On Media Group y sus vistas de trabajo.
 
-## Vistas previas públicas
+## Vistas del sitio
 
-- [Sitio web con fotografías reales](https://deanandrewmusic-jpg.github.io/on-media-group/photo-preview/)
+- [Sitio publicado en GitHub Pages](https://deanandrewmusic-jpg.github.io/on-media-group/)
+- [Vista con fotografías reales](https://deanandrewmusic-jpg.github.io/on-media-group/photo-preview/)
+
+## Material comercial complementario
+
 - [Catálogo interactivo de servicios](https://deanandrewmusic-jpg.github.io/on-media-group/catalogo-preview/)
-- [Florece: identidad, experiencia y registro](https://deanandrewmusic-jpg.github.io/on-media-group/florece-preview/)
 
-## Proyecto principal
+## Contenido principal
 
-La propuesta web presenta los servicios de On Media Group:
+El sitio presenta los servicios de On Media Group:
 
 - Producción integral de eventos
 - Pantallas LED
@@ -18,8 +21,6 @@ La propuesta web presenta los servicios de On Media Group:
 - Producción audiovisual
 - BTL y activaciones
 
-Incluye navegación por secciones, servicios interactivos, experiencias reales, preguntas frecuentes y contacto directo por WhatsApp.
+Incluye navegación por secciones, experiencias reales, preguntas frecuentes y contacto directo por WhatsApp.
 
-## Entregables de práctica
-
-El cierre documentado de las semanas 8 y 9 está en [docs/Semanas_8_y_9_Practica.md](docs/Semanas_8_y_9_Practica.md).
+La identidad del evento Florece es un proyecto independiente y no forma parte de este sitio ni de este repositorio.
